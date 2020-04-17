@@ -1,7 +1,14 @@
+from flask import Flask,request 
 import requests
 import json
 
-def get_data(msg):
+app = Flask(__name__) 
+@app.route('/')
+def test1():
+    return "Hello!"
+
+@app.route('/<string:msg>',methods=['GET','POST'])
+def test(msg):   
     url = "https://covid-193.p.rapidapi.com/statistics"
     headers = {
         'x-rapidapi-host': "covid-193.p.rapidapi.com",
@@ -28,3 +35,6 @@ def get_data(msg):
             result = {"country":msg,"data_complete":data_complete,"total_cases":total,"active_cases":active_cases,"deaths":total_deaths,"new_cases":new_cases,"newdeaths":new_deaths,"recovered":recovered,"date":date,"time":time,"critical_cases":critical_cases,} 
             return(result)
     return("Enter a valid country name!")
+
+if __name__ == '__main__':
+	app.run(debug=True)
