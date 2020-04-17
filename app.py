@@ -30,9 +30,8 @@ def test(msg):
             new_deaths=data["response"][i]["deaths"]["new"]
             time = data["response"][i]["time"]
             date = data["response"][i]["day"]
-            data_complete="total_infectd:" +str(total)
-
-            result = {"country":msg,"data_complete":data_complete,"total_cases":total,"active_cases":active_cases,"deaths":total_deaths,"new_cases":new_cases,"newdeaths":new_deaths,"recovered":recovered,"date":date,"time":time,"critical_cases":critical_cases,} 
+        
+            result = {"country":msg,"total_cases":total,"active_cases":active_cases,"deaths":total_deaths,"new_cases":new_cases,"newdeaths":new_deaths,"recovered":recovered,"date":date,"time":time,"critical_cases":critical_cases,} 
             return(result)
     return("Enter a valid country name!")
 
