@@ -3,4 +3,4 @@
 1. To get information of all over the world
 "https://covidgideon.herokuapp.com/all"
 2. To get status of COVID-19 for any particular country
-"https://covidgideon.herokuapp.com/<country-name>"
+"https://covidgideon.herokuapp.com/country-name"
